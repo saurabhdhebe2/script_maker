@@ -1,0 +1,41 @@
+{
+  "auth": {
+    "registerSuccess": "User registered successfully",
+    "loginSuccess": "Login successful",
+    "emailVerified": "Email verified successfully",
+    "passwordResetRequested": "Password reset token sent",
+    "passwordResetSuccess": "Password reset successful",
+    "userNotFound": "User not found",
+    "incorrectPassword": "Incorrect password",
+    "emailInUse": "Email already in use"
+  },
+  "user": {
+    "userCreated": "User created successfully",
+    "userUpdated": "User updated successfully",
+    "userNotFound": "User not found",
+    "userDeleted": "User deleted successfully"
+  },
+  "script": {
+    "scriptGenerated": "Script generated successfully",
+    "scriptGenerationError": "Error generating script",
+    "userNotPremium": "Upgrade to premium to access extended features"
+  },
+  "plan": {
+    "planNotFound": "Requested plan not found",
+    "plansFetched": "All plans fetched successfully",
+    "plansCompared": "Plans compared successfully",
+    "subscribedSuccess": "Subscribed to plan successfully",
+    "alreadySubscribed": "User is already subscribed",
+    "subscriptionCancelled": "Subscription cancelled successfully",
+    "subscriptionFailed": "Subscription failed",
+    "subscriptionUpgraded": "Subscription upgraded successfully",
+    "subscriptionNotFound": "No active subscription found",
+    "subscriptionFetched": "Subscription fetched successfully",
+    "subscriptionsFetched": "All subscriptions fetched successfully"
+  },
+  "common": {
+    "serverError": "Internal server error",
+    "validationFailed": "Validation failed",
+    "missingFields": "Missing required fields"
+  }
+}

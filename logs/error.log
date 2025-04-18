@@ -1,0 +1,54 @@
+2025-04-18T15:31:10.946Z [error]: Error in login: auth.userNotFound
+2025-04-18T15:31:10.947Z [error]: auth.userNotFound
+2025-04-18T15:32:08.747Z [error]: Error in login: auth.userNotFound
+2025-04-18T15:32:08.748Z [error]: auth.userNotFound
+2025-04-18T15:32:10.452Z [error]: Error in login: auth.userNotFound
+2025-04-18T15:32:10.453Z [error]: auth.userNotFound
+2025-04-18T15:32:43.265Z [error]: Error during user login: auth.userNotFound
+2025-04-18T15:35:23.489Z [error]: Error during user login: auth.userNotFound
+2025-04-18T15:39:31.736Z [error]: Error during user login: Cannot read properties of undefined (reading 'status')
+2025-04-18T15:40:02.855Z [error]: Error during user login: Cannot read properties of undefined (reading 'status')
+2025-04-18T15:40:34.618Z [error]: Error during user login: Cannot read properties of undefined (reading 'status')
+2025-04-18T15:43:14.277Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T16:07:42.398Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T16:08:36.011Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T16:09:52.995Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T16:16:59.678Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Error with OpenAI API
+2025-04-18T16:17:55.887Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Error with OpenAI API
+2025-04-18T16:24:48.266Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Error with OpenAI API
+2025-04-18T16:30:09.788Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Error with OpenAI API
+2025-04-18T16:33:27.096Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: generateScriptFromOpenAI is not a function
+2025-04-18T17:51:03.236Z [error]: Get all plans error: Cannot read properties of undefined (reading 'status')
+2025-04-18T17:52:06.239Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T17:57:52.535Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T17:58:44.490Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T17:59:27.750Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:02:47.026Z [error]: Error fetching subscription: select "subscriptions".*, "plan".* from "subscriptions" inner join "users" on "subscriptions"."user_id" = "users"."id" inner join "plans" on "subscriptions"."plan_id" = "plans"."id" where "subscriptions"."user_id" = $1 limit $2 - missing FROM-clause entry for table "plan"
+2025-04-18T18:02:47.029Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:03:18.023Z [error]: Error fetching subscription: select "subscriptions".*, "plan".* from "subscriptions" inner join "users" on "subscriptions"."user_id" = "users"."id" inner join "plans" on "subscriptions"."plan_id" = "plans"."id" where "subscriptions"."user_id" = $1 limit $2 - missing FROM-clause entry for table "plan"
+2025-04-18T18:03:18.024Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:04:15.124Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:05:13.677Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:08:46.689Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:08:52.024Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:08:53.590Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:08:54.406Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:08:58.698Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:09:12.755Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:10:45.182Z [error]: Upgrade subscription error: update "subscriptions" set "plan_id" = $1 where "user_id" = $2 returning * - invalid input syntax for type uuid: "{{USER_ID}}"
+2025-04-18T18:10:45.183Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:11:10.213Z [error]: Upgrade subscription error: update "subscriptions" set "plan_id" = $1 where "user_id" = $2 returning * - invalid input syntax for type uuid: "{{USER_ID}}"
+2025-04-18T18:11:10.215Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:12:39.496Z [error]: Upgrade subscription error: req is not defined
+2025-04-18T18:12:39.501Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:13:05.665Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:13:45.157Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:23:40.727Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:23:51.374Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:24:23.984Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:24:32.152Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:32:41.922Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Cannot read properties of undefined (reading 'status')
+2025-04-18T18:33:35.337Z [error]: Error generating script for user 4aab0a58-5aff-4662-8717-1138728d3af0: Cannot read properties of undefined (reading 'status')
+2025-04-18T18:34:13.441Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:40:35.731Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T18:41:43.531Z [error]: Cannot set headers after they are sent to the client

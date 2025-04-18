@@ -1,0 +1,26 @@
+{
+    "authRoutes": {
+      "login": {
+        "body": {
+          "email": "required|email",
+          "password": "required|min:6"
+        }
+      },
+      "register": {
+        "body": {
+          "email": "required|email",
+          "username": "required|min:3",
+          "password": "required|min:6"
+        }
+      }
+    },
+    "userRoutes": {
+      "updateProfile": {
+        "body": {
+          "username": "required|min:3",
+          "email": "required|email"
+        }
+      }
+    }
+  }
+  
