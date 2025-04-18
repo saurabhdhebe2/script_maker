@@ -1,48 +1,49 @@
-const Validator = require('validatorjs'); // Import validatorjs
-const validationSchema = require('../validation/validationSchema.json'); // Centralized validation schema
+const Validator = require('validatorjs');
+const validationSchema = require('../validation/validationSchema.json');
 
-const validate = (route, method) => {
-  return (req, res, next) => {
-    const validationRules = validationSchema[route] && validationSchema[route][method];
+const extractRouteAndMethod = (path) => {
+  const pathParts = path.split('/').filter(Boolean);
+  const method = pathParts.pop();
+  const route = pathParts.pop();
+  return { route, method };
+};
 
-    if (!validationRules) {
-      return next(); 
-    }
+const buildValidationRules = (validationRules) => {
+  const rules = {};
+  if (validationRules.body) {
+    Object.keys(validationRules.body).forEach((field) => {
+      rules[field] = validationRules.body[field];
+    });
+  }
+  if (validationRules.query) {
+    Object.keys(validationRules.query).forEach((field) => {
+      rules[field] = validationRules.query[field];
+    });
+  }
+  if (validationRules.headers) {
+    Object.keys(validationRules.headers).forEach((field) => {
+      rules[field] = validationRules.headers[field];
+    });
+  }
+  return rules;
+};
 
-    const data = { ...req.body, ...req.query, ...req.headers };
+const validate = (req, res, next) => {
+  const { route, method } = extractRouteAndMethod(req.path);
+  const validationRules = validationSchema[route] && validationSchema[route][method];
+  if (!validationRules) {
+    return next();
+  }
 
-    const rules = {};
-    const customMessages = {};
+  const data = { ...req.body, ...req.query, ...req.headers, ...req.params };
+  const rules = buildValidationRules(validationRules);
+  const validation = new Validator(data, rules);
 
-    if (validationRules.body) {
-      Object.keys(validationRules.body).forEach((field) => {
-        const fieldRules = validationRules.body[field];
-        rules[field] = fieldRules;
-      });
-    }
+  if (validation.fails()) {
+    return res.status(400).json({ errors: validation.errors.all() });
+  }
 
-    if (validationRules.query) {
-      Object.keys(validationRules.query).forEach((field) => {
-        const fieldRules = validationRules.query[field];
-        rules[field] = fieldRules;
-      });
-    }
-
-    if (validationRules.headers) {
-      Object.keys(validationRules.headers).forEach((field) => {
-        const fieldRules = validationRules.headers[field];
-        rules[field] = fieldRules;
-      });
-    }
-
-    const validation = new Validator(data, rules, customMessages);
-
-    if (validation.fails()) {
-      return res.status(400).json({ errors: validation.errors.all() });
-    }
-
-    next(); 
-  };
+  next();
 };
 
 module.exports = validate;

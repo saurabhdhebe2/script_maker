@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "31031533-1788-42cb-8b93-133a6a7dc700",
+		"name": "script_maker",
+		"description": "This collection includes all auth, user, and script related endpoints for the SaaS platform.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38736604"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"strongPassword123\",\n    \"username\": \"testuser\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"updatedEmail@example.com\",\n    \"password\": \"strongPassword123\",\n    \"username\": \"updatedUserName\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYWIwYTU4LTVhZmYtNDY2Mi04NzE3LTExMzg3MjhkM2FmMCIsImVtYWlsIjoidGVzdHVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDQ5OTA5OTEsImV4cCI6MTc0NTU5NTc5MX0.XIWMS_MEhscpef_MY4K2wOjwx5fOZE5NLp8i34ZfKro"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"updatedUserName\",\n    \"email\": \"updatedEmail@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Script Generation",
+			"item": [
+				{
+					"name": "Generate Script (Free)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYWIwYTU4LTVhZmYtNDY2Mi04NzE3LTExMzg3MjhkM2FmMCIsImVtYWlsIjoidXBkYXRlZEVtYWlsQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0OTk5MDcyLCJleHAiOjE3NDU2MDM4NzJ9.F-SgiCNuhy-6x0Y-PFndsVclHbi1eGhXUffmKCI01hU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"recently visited tawang solo as a girl in hinglish\",\n    \"scriptLength\":1000,\n    \"keywords\": [\n        \"tawang\",\n        \"solo travel\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/scripts/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"scripts",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Script (Premium)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"topic\":\"Advanced Node.js topics\",\"keywords\":[\"Node.js\",\"Microservices\"]}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/script/generate/premium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"script",
+								"generate",
+								"premium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plansSubscriptions",
+			"item": [
+				{
+					"name": "subscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"planId\": \"{{PLAN_ID}}\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/plans/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelSubscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/plans/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailablePlans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/plans/plans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mysubscription",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/plans/my-subscription",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"my-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comparePlan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ADMIN_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"planId1\": \"{{PLAN_ID_1}}\", \"planId2\": \"{{PLAN_ID_2}}\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/plans/compare",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"compare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upgrade",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ADMIN_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\": \"{{USER_ID}}\", \"newPlanId\": \"{{NEW_PLAN_ID}}\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/plans/upgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

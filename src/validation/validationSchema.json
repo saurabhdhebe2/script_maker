@@ -1,26 +1,57 @@
 {
-    "authRoutes": {
-      "login": {
-        "body": {
-          "email": "required|email",
-          "password": "required|min:6"
-        }
-      },
-      "register": {
-        "body": {
-          "email": "required|email",
-          "username": "required|min:3",
-          "password": "required|min:6"
-        }
+  "users": {
+    "login": {
+      "body": {
+        "email": "required|email",
+        "password": "required|min:6"
       }
     },
-    "userRoutes": {
-      "updateProfile": {
-        "body": {
-          "username": "required|min:3",
-          "email": "required|email"
-        }
+    "register": {
+      "body": {
+        "email": "required|email",
+        "username": "required|min:3",
+        "password": "required|min:6"
+      }
+    },
+    "update": {
+      "body": {
+        "username": "required|min:3",
+        "email": "required|email"
+      }
+    },
+    "delete": {
+    }
+  },
+  "scripts": {
+    "generate": {
+      "body": {
+        "topic": "required|string",
+        "scriptLength": "required|numeric"
       }
     }
+  },
+  "plans": {
+    "subscribe": {
+      "body": {
+        "planId": "required|numeric"
+      }
+    },
+    "cancel": {
+    },
+    "compare": {
+      "body": {
+        "plan1Id": "required|numeric",
+        "plan2Id": "required|numeric"
+      }
+    },
+    "upgrade": {
+      "body": {
+        "newPlanId": "required"
+      }
+    },
+    "plans":{
+    },
+    "my-subscription":{
+    }
   }
-  
+}

@@ -106,7 +106,7 @@ const comparePlans = async (req, res) => {
  */
 const upgradeSubscription = async (req, res) => {
   try {
-    const { userId, newPlanId } = req.body;
+    const {  newPlanId } = req.body;
 
     if ( !newPlanId) {
       return error(res, 'common.missingFields', 400);

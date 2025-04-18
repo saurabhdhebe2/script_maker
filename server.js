@@ -28,7 +28,7 @@ const apiLimiter = rateLimit({
   message: 'Too many requests from this IP, please try again later.',
 });
 app.use('/api/', apiLimiter);
-// app.use('/api/',validate)       // centralised validation
+app.use('/api/',validate)       // centralised validation
 app.use('/api/',authenticate) 
 
 app.locals.db = db;

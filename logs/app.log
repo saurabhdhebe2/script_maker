@@ -186,3 +186,15 @@
 2025-04-18T18:40:35.731Z [error]: Cannot set headers after they are sent to the client
 2025-04-18T18:41:43.526Z [info]: Script generated and saved for user 4aab0a58-5aff-4662-8717-1138728d3af0
 2025-04-18T18:41:43.531Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:14:17.658Z [info]: Server running on port 3000
+2025-04-18T20:15:28.181Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:15:50.091Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:16:00.024Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:16:15.330Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:21:04.735Z [info]: Server running on port 3000
+2025-04-18T20:22:28.825Z [info]: User logged in: updatedEmail@example.com
+2025-04-18T20:22:28.827Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:22:59.783Z [info]: User logged in: updatedEmail@example.com
+2025-04-18T20:22:59.785Z [error]: Cannot set headers after they are sent to the client
+2025-04-18T20:23:27.944Z [info]: User logged in: updatedEmail@example.com
+2025-04-18T20:23:31.863Z [error]: Cannot set headers after they are sent to the client
