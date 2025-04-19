@@ -156,7 +156,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"topic\": \"recently visited tawang solo as a girl in hinglish\",\n    \"scriptLength\":1000,\n    \"keywords\": [\n        \"tawang\",\n        \"solo travel\"\n    ]\n}"
+							"raw": "{\n  \"topic\": \"Top 5 AI Tools for Content Creators\",\n  \"length\": 600,\n  \"category\": \"tutorial\",\n  \"time\": \"3 mins\",\n  \"tone\": \"engaging\",\n  \"audience\": \"content creators\",\n  \"language\": \"English\",\n  \"platform\": \"YouTube\",\n  \"keywords\": [\"AI tools\", \"YouTube automation\", \"ChatGPT\"]\n}\n"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/scripts/generate",
@@ -263,6 +263,15 @@
 								"value": "Bearer {{TOKEN}}"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:3000/api/plans/cancel",
 							"protocol": "http",
