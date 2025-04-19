@@ -18,6 +18,7 @@
   "script": {
     "scriptGenerated": "Script generated successfully",
     "scriptGenerationError": "Error generating script",
+    "noActiveSubscription":"You have no active subscription",
     "userNotPremium": "Upgrade to premium to access extended features",
     "dailyLimitReached": "You have reached your daily script limit. Upgrade to premium for unlimited access."
   },

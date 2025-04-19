@@ -23,7 +23,7 @@ const generateScript = async ({ userId, topic, title, keywords, length, category
 
     if (!isPremium) {
       const count = await scriptModel.countFreeScriptsToday(userId);
-      if (count >= 3) {
+      if (count >= (plan?.script_limit_per_month ?? 10)) {
         return error(res, 'script.dailyLimitReached', 403);
       }
     }

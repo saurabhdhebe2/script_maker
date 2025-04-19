@@ -33,7 +33,7 @@
   "plans": {
     "subscribe": {
       "body": {
-        "planId": "required|numeric"
+        "planId": "required"
       }
     },
     "cancel": {

@@ -22,8 +22,19 @@ const createSubscription = async (userId, planId) => {
 };
 
 const cancelSubscription = async (userId) => {
-  return knex('subscriptions').where({ user_id: userId }).update({ is_active: false }).returning('*');
+  const trx = await knex.transaction();
+  try {
+    let planId = await knex('plans').where('name','Free').select('id').first()
+    await knex('subscriptions').where({ user_id: userId }).update({ is_active: false,plan_id:planId.id }).returning('*');
+    const update = await trx('users').where('id', userId).update({ role: 'Free' }).returning('*');
+    await trx.commit();
+    return update;
+  } catch (err) {
+    await trx.rollback();
+    return null
+  }
 };
+
 
 const getAllSubscriptions = async (filters) => {
   const query = knex('subscriptions')
