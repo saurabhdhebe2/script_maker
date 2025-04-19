@@ -18,7 +18,8 @@
   "script": {
     "scriptGenerated": "Script generated successfully",
     "scriptGenerationError": "Error generating script",
-    "userNotPremium": "Upgrade to premium to access extended features"
+    "userNotPremium": "Upgrade to premium to access extended features",
+    "dailyLimitReached": "You have reached your daily script limit. Upgrade to premium for unlimited access."
   },
   "plan": {
     "planNotFound": "Requested plan not found",

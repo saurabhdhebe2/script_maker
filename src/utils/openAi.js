@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 
-const generateScriptFromOpenAI = async (topic, length) => {
+const generateScriptFromOpenAI = async (topic, length, category='short', time='1 min') => {
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',

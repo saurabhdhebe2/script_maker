@@ -10,21 +10,15 @@ const extractRouteAndMethod = (path) => {
 
 const buildValidationRules = (validationRules) => {
   const rules = {};
-  if (validationRules.body) {
-    Object.keys(validationRules.body).forEach((field) => {
-      rules[field] = validationRules.body[field];
-    });
-  }
-  if (validationRules.query) {
-    Object.keys(validationRules.query).forEach((field) => {
-      rules[field] = validationRules.query[field];
-    });
-  }
-  if (validationRules.headers) {
-    Object.keys(validationRules.headers).forEach((field) => {
-      rules[field] = validationRules.headers[field];
-    });
-  }
+  const sections = ['body', 'query', 'params', 'headers'];
+
+  sections.forEach((section) => {
+    const fields = validationRules[section];
+    if (fields && typeof fields === 'object') {
+      Object.assign(rules, fields);
+    }
+  });
+
   return rules;
 };
 
@@ -40,7 +34,7 @@ const validate = (req, res, next) => {
   const validation = new Validator(data, rules);
 
   if (validation.fails()) {
-    return res.status(400).json({ errors: validation.errors.all() });
+    return res.status(400).json({status:false, errors: validation.errors.all() });
   }
 
   next();

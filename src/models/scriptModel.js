@@ -1,6 +1,5 @@
 const knex = require('../config/db');
 
-// Save script to database
 const saveScript = async ({ userId, topic, title, keywords, content, modelUsed, type }) => {
   return knex('scripts')
     .insert({
@@ -16,12 +15,21 @@ const saveScript = async ({ userId, topic, title, keywords, content, modelUsed, 
     .then(rows => rows[0]);
 };
 
-// Get user by ID
 const getUserById = async (userId) => {
   return knex('users').where({ id: userId }).first();
 };
 
+const countFreeScriptsToday = async (userId) => {
+  return knex('scripts')
+    .where('user_id', userId)
+    .andWhere('type', 'free')
+    .andWhereRaw("DATE(created_at) = CURRENT_DATE")
+    .count()
+    .then(res => parseInt(res[0].count));
+};
+
 module.exports = {
   saveScript,
-  getUserById
+  getUserById,
+  countFreeScriptsToday
 };

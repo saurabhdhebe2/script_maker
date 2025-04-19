@@ -1,15 +1,12 @@
 const scriptService = require('../services/scriptService');
 const { success, error } = require('../utils/response');
 
-/**
- * Generate a script
- */
 const generateScript = async (req, res, next) => {
   try {
-    const { topic, scriptLength, title, keywords } = req.body;
+    const { topic, length, title, keywords, category, time } = req.body;
     const userId = req.user.id;
 
-    if (!topic || !scriptLength) {
+    if (!topic || !length) {
       return error(res, 'common.missingFields', 400);
     }
 
@@ -18,7 +15,9 @@ const generateScript = async (req, res, next) => {
       topic,
       title,
       keywords,
-      scriptLength,
+      length,
+      category,
+      time,
       res
     });
 
@@ -36,5 +35,5 @@ const generateScript = async (req, res, next) => {
 };
 
 module.exports = {
-  generateScript,
+  generateScript
 };
